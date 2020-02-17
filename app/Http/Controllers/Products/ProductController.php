@@ -38,7 +38,12 @@ class ProductController extends Controller
     {
         //Users should be able to search on any field, full value matching is fine
         if (!empty($request->search)) {
-            $products = Product::where ('name', $request->search)->with(['variations.stock'])->withScopes($this->scopes())->paginate(10);
+            $products = Product::where ('name', $request->search)
+                                    ->orWhere('slug', $request->search)
+                                    ->orWhere('price', $request->search)
+                                    ->orWhere('description', $request->search)
+                                    ->with(['variations.stock'])->withScopes($this->scopes())->paginate(10);
+                                    
         } else {
             $products = Product::with(['variations.stock'])->withScopes($this->scopes())->paginate(10);
         }
