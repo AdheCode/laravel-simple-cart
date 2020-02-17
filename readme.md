@@ -29,7 +29,6 @@
   - Bisa multiple harga
   - Akses Product dan Search Product bisa tanpa harus Login, tp disarankan untuk Login terlebih dahulu 
   - Tidak ada payment gateway yang terintegrasi, jadi saya berasumsi bahwa pengguna akan memasukkan informasi kartu kredit untuk checkout
-  - Cart Items Quantities Can be 1 or more but Max is 10.
   - Jumlah Item Cart Bisa 1 atau lebih.
 
 
